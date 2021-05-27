@@ -2,17 +2,29 @@ package br.com.juliana.casadocodigo.dto;
 
 import br.com.juliana.casadocodigo.model.Author;
 
+import java.time.LocalDate;
+
 public class AuthorDTO {
+    private Long id;
+
     private String name;
+
     private String email;
+
     private String description;
 
-    public AuthorDTO(String name, String email, String description)
-    {
-        this.name = name;
-        this.email = email;
-        this.description = description;
+    private LocalDate createdAt;
 
+    public AuthorDTO(Author author) {
+        this.id = author.getId();
+        this.name = author.getName();
+        this.email = author.getEmail();
+        this.description = author.getDescription();
+        this.createdAt = author.getCreatedAt();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -27,8 +39,7 @@ public class AuthorDTO {
         return description;
     }
 
-    public Author converterAuthorDTO(AuthorDTO authorDTO) {
-        return new Author(authorDTO.getName(), authorDTO.getEmail(), authorDTO.getDescription());
+    public LocalDate getCreatedAt() {
+        return createdAt;
     }
 }
-
