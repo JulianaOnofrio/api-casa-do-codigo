@@ -1,5 +1,7 @@
 package br.com.juliana.casadocodigo.model;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name = "paises")
 public class Country {

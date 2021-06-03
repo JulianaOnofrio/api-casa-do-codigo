@@ -1,5 +1,7 @@
 package br.com.juliana.casadocodigo.dto;
 
+import br.com.juliana.casadocodigo.model.Country;
+
 public class CountryDTO {
     private Integer id;
 
