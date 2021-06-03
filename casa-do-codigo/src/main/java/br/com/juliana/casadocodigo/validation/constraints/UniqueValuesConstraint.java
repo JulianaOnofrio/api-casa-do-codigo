@@ -1,5 +1,17 @@
 package br.com.juliana.casadocodigo.validation.constraints;
 
+import br.com.juliana.casadocodigo.validation.annotation.UniqueValues;
+import br.com.juliana.casadocodigo.validation.utils.ValidationUtils;
+import org.springframework.beans.BeanWrapperImpl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import java.util.Arrays;
+import java.util.List;
+
 public class UniqueValuesConstraint implements ConstraintValidator<UniqueValues, Object> {
     @PersistenceContext
     private EntityManager manager;

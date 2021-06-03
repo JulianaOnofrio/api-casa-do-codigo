@@ -1,5 +1,14 @@
 package br.com.juliana.casadocodigo.validation.constraints;
 
+import br.com.juliana.casadocodigo.validation.annotation.RequiredIf;
+import org.springframework.beans.BeanWrapperImpl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import java.lang.reflect.InvocationTargetException;
+
 public class RequiredIfConstraint implements ConstraintValidator<RequiredIf, Object> {
     @PersistenceContext
     private EntityManager manager;
